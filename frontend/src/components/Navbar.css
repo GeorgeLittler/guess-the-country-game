@@ -1,0 +1,71 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2.2em;
+    color: white;
+    user-select: none;
+    font-family: "Caesar Dressing", system-ui;
+    font-weight: 500;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 50px;
+    user-select: none;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .nav-login, .navigation .nav-logout {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .2s ease;
+    user-select: none;
+}
+
+.navigation .nav-login:hover, .navigation .nav-logout:hover {
+    background: #fff;
+    color: #162938;
+}
+

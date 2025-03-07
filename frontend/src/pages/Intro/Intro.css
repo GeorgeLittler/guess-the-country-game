@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Long+Cang&display=swap');
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+.home-container .home-content-grid {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-gap: 20px;
+    max-width: 70%;
+    margin-top: 50px;
+}
+
+.home-container h1 {
+    grid-area: 1 / 2 / 1 / 2;
+    font-family: "Caesar Dressing", system-ui;
+    font-weight: 500;
+    font-size: 3.5em;
+    color: #000;
+    margin-bottom: 40px;
+    user-select: none;
+}
+
+.home-container .home-marzy {
+    grid-area: 1 / 1 / span 3 / 1;
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.home-container .home-paragraph {
+    grid-area: 2 / 2 / 2 / 2;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    user-select: none;
+}
+
+.start-game-btn {
+    width: 80%;              
+    background-color: #000;  
+    color: #fff;             
+    border: none;             
+    padding: 12px 20px;       
+    border-radius: 50px;      
+    cursor: pointer;          
+    font-size: 1.2em;          
+    text-align: center;  
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: .2s ease;
+    user-select: none;     
+}
+
+.start-game-btn:hover {
+    background-color: #333;
+    box-shadow: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-content h2 {
+    user-select: none;
+  }
+
+  .modal-content p {
+    margin-top: 10px;
+    user-select: none;
+  }
+  
+  .modal-close-btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .modal-login-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: .2s ease;
+    user-select: none;
+  }
+
+  .modal-login-btn:hover {
+    box-shadow: none;
+    background-color: #333;
+  }
+  
+  

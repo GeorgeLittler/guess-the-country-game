@@ -1,0 +1,149 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clue-container {
+  grid-area: 2 / 2 / span 4 / 2;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  background-color: #f0f4f8;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.button-grid button {
+  border: none;
+  pointer-events: auto;
+  border-radius: 5px;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button-grid button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.button-grid button.active {
+  background-color: #000 !important;
+  box-shadow: none;
+  cursor: default;
+}
+
+.button-grid button.three, .button-grid button.submitted {
+  box-shadow: none;
+  cursor: default;
+}
+
+.button-grid button.finished {
+  background-color: #000 !important;
+  box-shadow: none;
+  cursor: default;
+}
+
+.button-grid button.three:not(.active):hover {
+  box-shadow: none;
+  cursor: default;
+}
+
+.button-grid button.button-culture, .clue-paragraph.culture {
+  background-color: #fd7e14;
+}
+
+.button-grid button.button-culture:hover:not(.three):not(.submitted),
+.button-grid button.button-culture.three.active:not(.submitted) {
+  background-color: #d66b0e; 
+}
+
+.button-grid button.button-geography, .clue-paragraph.geography {
+  background-color: #007bff;
+}
+
+.button-grid button.button-geography:hover:not(.three):not(.submitted),
+.button-grid button.button-geography.three.active:not(.submitted) {
+  background-color: #0062cc; 
+}
+
+.button-grid button.button-history, .clue-paragraph.history {
+  background-color: #6f42c1;
+}
+
+.button-grid button.button-history:hover:not(.three):not(.submitted),
+.button-grid button.button-history.three.active:not(.submitted) {
+  background-color: #5a37a0;
+}
+
+.button-grid button.button-politics, .clue-paragraph.politics {
+  background-color: #28a745;
+}
+
+.button-grid button.button-politics:hover:not(.three):not(.submitted),
+.button-grid button.button-politics.three.active:not(.submitted) {
+  background-color: #1f8f3b; 
+}
+
+.button-grid button.button-random-knowledge, .clue-paragraph.random-knowledge {
+  background-color: #dc3545;
+}
+
+.button-grid button.button-random-knowledge:hover:not(.three):not(.submitted),
+.button-grid button.button-random-knowledge.three.active:not(.submitted) {
+  background-color: #c82333;
+}
+
+.button-grid button.button-sport, .clue-paragraph.sport {
+  background-color: #20c997;
+}
+
+.button-grid button.button-sport:hover:not(.three):not(.submitted),
+.button-grid button.button-sport.three.active:not(.submitted) {
+  background-color: #1ba87e;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.clue-paragraph {
+  margin: 14px 0 14px;
+  padding: 12px 8px;
+  border: 2px solid #ccc; 
+  color: #fff;
+  text-align: center;
+}
+
+.clue-container .button-grid button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #ccc;
+  color: #666;
+  box-shadow: none;
+}
+
+.clue-container .button-grid button.disabled:hover {
+  transform: none;
+  background-color: #ccc;
+}
+
+.clue-container .button-grid button.disabled:active {
+  box-shadow: none;
+}
