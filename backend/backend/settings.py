@@ -130,6 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://your-frontend.vercel.app", # Replace with your actual Vercel domain
 ]
 
 AUTH_USER_MODEL = 'api.User'
@@ -158,3 +159,9 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
     }
 }
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Enable WhiteNoise to serve static files
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
