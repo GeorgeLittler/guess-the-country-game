@@ -7,7 +7,7 @@
 ## Live Deployment
 
 - **Frontend**: [https://guess-the-country.vercel.app](https://guess-the-country.vercel.app)
-- **Backend API**: [https://guess-the-country-backend.onrender.com](https://guess-the-country-backend.onrender.com)
+- **Backend API**: [https://guess-the-country-backend.onrender.com](https://guess-the-country-backend.onrender.com
 
 ---
 
@@ -17,6 +17,7 @@
 - **Backend**: Django REST Framework (deployed on Render)
 - **Database**: Supabase (PostgreSQL)
 - **Authentication**: Token-based with DRF
+- **Version Control**: Git & GitHub
 
 ---
 
@@ -75,25 +76,25 @@ This will run the frontend at http://localhost:3000 and the backend at http://lo
 
 ## Features
 
-✨ 6 categories of clues per country
+- ✨ 6 categories of clues per country
 
-🔐 Authenticated user sessions
+- 🔐 Token-based user authentication
 
-📤 Users can submit their own clues
+- 📤 Users can submit new clues for review
 
-🧠 Clue memory ensures non-repeating clues
+- 🧠 Clue memory prevents duplicates
 
-🧩 All data stored in a centralised Supabase PostgreSQL DB
+- 🧩 All data stored in a centralised Supabase PostgreSQL DB
 
 ---
 
 ## Deployment Info
 
-Render hosts the Django backend
+- Render — Django backend API
 
-Vercel hosts the React frontend
+- Vercel — React frontend UI
 
-Supabase hosts the production PostgreSQL database
+- Supabase — Hosted PostgreSQL database with table editor and REST interface
 
 ---
 
