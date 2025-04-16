@@ -6,8 +6,8 @@
 
 ## Live Deployment
 
-- **Frontend**: [https://guess-the-country.vercel.app](https://guess-the-country.vercel.app)
-- **Backend API**: [https://guess-the-country-backend.onrender.com](https://guess-the-country-backend.onrender.com)
+- **Frontend**: [https://guess-the-country-game.vercel.app](https://guess-the-country-game.vercel.app)
+- **Backend API**: [https://guess-the-country-game.onrender.com](https://guess-the-country-game.onrender.com)
 
 ---
 
