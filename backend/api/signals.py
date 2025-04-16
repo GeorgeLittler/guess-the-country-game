@@ -1,11 +1,11 @@
+import sys
+from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.contrib.auth import get_user_model
 from rest_framework.authtoken.models import Token
-
-User = get_user_model()
+from .models import User
 
 @receiver(post_save, sender=User)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
-    if created:
+    if created and 'loaddata' not in sys.argv:
         Token.objects.create(user=instance)

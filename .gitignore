@@ -1,0 +1,24 @@
+# Python
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+
+# Django static/media
+/staticfiles/
+/media/
+
+# JSON dump files
+*.json
+
+# Node/Vercel
+node_modules/
+.build/
+dist/
+.env.local
+
+# macOS
+.DS_Store
+
+# Others
+*.log
