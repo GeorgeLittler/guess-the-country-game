@@ -64,12 +64,19 @@ const Register = () => {
           const data = error.response.data;
           const messages = [];
     
-          for (const key in data) {
-            if (Array.isArray(data[key])) {
-              data[key].forEach((msg) => messages.push(`${msg}`));
-            } else {
-              messages.push(`${key}: ${data[key]}`);
+          try {
+            for (const key in data) {
+              if (Array.isArray(data[key])) {
+                data[key].forEach((msg) => messages.push(`${msg}`));
+              } else if (typeof data[key] === 'string') {
+                messages.push(data[key]);
+              } else {
+                messages.push(`${key}: ${JSON.stringify(data[key])}`);
+              }
             }
+          } catch (err) {
+            console.error("Error processing error response:", err);
+            messages.push("Something went wrong while processing the error.");
           }
     
           if (messages.length > 0) {
@@ -77,6 +84,8 @@ const Register = () => {
           } else {
             setError("Unsuccessful registration. Please try again.");
           }
+    
+          console.log("Registration error details:", data);
         } else {
           setError("Unsuccessful registration. Please try again.");
         }
@@ -85,8 +94,10 @@ const Register = () => {
       } else {
         setError("An error occurred. Please try again.");
       }
+    
       console.error("Registration error:", error.message);
     }
+    
   };
 
   useEffect(() => {
