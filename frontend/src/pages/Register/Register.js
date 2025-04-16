@@ -22,6 +22,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("🚀 handleSubmit triggered");
     if (isSubmitting) return;
 
     console.log("Submitting registration form with:", username, password);
