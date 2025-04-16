@@ -1,6 +1,6 @@
 # Guess The Country Game
 
-**Guess The Country** is an interactive quiz game where players choose clues from different categories to identify a European country. You can select up to three clues per round from categories like Culture, Geography, History, Politics, Random Knowledge, and Sport. Points are awarded based on the number of clues used, encouraging strategic play. Users can also submit new clues for approval.
+**Guess The Country** is an interactive geography game where players pick clues from different categories in order to identify a European country. You can select up to three clues per round from these clue categories: Culture, Geography, History, Politics, Random Knowledge, and Sport. Points are awarded based on the number of clues used, encouraging strategic play. Users can also submit new clues for approval.
 
 ---
 
