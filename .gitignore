@@ -22,3 +22,7 @@ dist/
 
 # Others
 *.log
+
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
