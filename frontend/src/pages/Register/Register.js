@@ -33,6 +33,7 @@ const Register = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Submitting registration form with:", username, password);
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -57,6 +58,7 @@ const Register = () => {
       login(response.data.token);
       navToIntro();
     } catch (error) {
+      console.log("⚠️ Catch block triggered");
       if (error.response) {
         if (error.response.status === 429) {
           setError("Too many registration attempts. Please try again later.");
@@ -156,6 +158,11 @@ const Register = () => {
         <button type="submit" className="register-btn">
           Register
         </button>
+        {error && (
+          <div style={{ color: 'red', marginTop: '10px', border: '1px solid red', padding: '8px' }}>
+            {error}
+          </div>
+        )}
       </form>
       <button onClick={navToLogin} className="nav-login-btn">
         Already got an account?
