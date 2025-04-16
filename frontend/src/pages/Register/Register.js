@@ -100,7 +100,6 @@ const Register = () => {
           autoComplete="new-username"
           className="register-input"
           id="register-username"
-          required
           type="text"
           placeholder="Username"
           value={username}
@@ -110,7 +109,6 @@ const Register = () => {
           autoComplete="new-password"
           className="register-input"
           id="register-password"
-          required
           type="password"
           placeholder="Password"
           value={password}
@@ -120,7 +118,6 @@ const Register = () => {
           autoComplete="new-password"
           className="register-input"
           id="register-confirm-password"
-          required
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
