@@ -61,19 +61,27 @@ const Register = () => {
         if (error.response.status === 429) {
           setError("Too many registration attempts. Please try again later.");
         } else if (error.response.data) {
-          if (typeof error.response.data === "object") {
-            const errorMessages = Object.values(error.response.data).flat();
-            setError(errorMessages.join(" "));
+          const data = error.response.data;
+          const messages = [];
+    
+          for (const key in data) {
+            if (Array.isArray(data[key])) {
+              data[key].forEach((msg) => messages.push(`${msg}`));
+            } else {
+              messages.push(`${key}: ${data[key]}`);
+            }
+          }
+    
+          if (messages.length > 0) {
+            setError(messages.join(" "));
           } else {
-            setError(error.response.data);
+            setError("Unsuccessful registration. Please try again.");
           }
         } else {
           setError("Unsuccessful registration. Please try again.");
         }
       } else if (error.request) {
-        setError(
-          "No response received from the server. Please try again later."
-        );
+        setError("No response received from the server. Please try again later.");
       } else {
         setError("An error occurred. Please try again.");
       }
