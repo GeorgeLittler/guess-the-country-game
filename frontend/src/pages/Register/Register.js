@@ -28,6 +28,11 @@ const Register = () => {
     setIsSubmitting(true);
     setError("");
 
+    if (!username || !password || !confirmPassword) {
+      setError("All fields are required.");
+      return;
+    }
+
     try {
       const response = await axiosInstance.post(API_ENDPOINTS.REGISTER, {
         username,
