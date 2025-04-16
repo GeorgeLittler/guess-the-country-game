@@ -22,17 +22,17 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("🚀 handleSubmit triggered");
-    if (isSubmitting) return;
 
-    console.log("Submitting registration form with:", username, password);
-    setIsSubmitting(true);
-    setError("");
+    setError(""); // ✅ clear previous error
 
+    // ✅ manual validation for empty fields
     if (!username || !password || !confirmPassword) {
       setError("All fields are required.");
       return;
     }
+
+    setIsSubmitting(true);
+    console.log("Submitting registration form with:", username, password);
 
     try {
       const response = await axiosInstance.post(API_ENDPOINTS.REGISTER, {
@@ -41,10 +41,9 @@ const Register = () => {
         confirm_password: confirmPassword,
       });
 
-      console.log("Successfully registered");
-      login(response.data.token); // Automatically log the user in
+      console.log("✅ Successfully registered");
+      login(response.data.token); // Automatically log in the user
       navigate("/");
-
     } catch (error) {
       console.log("⚠️ Catch block triggered");
 
@@ -58,7 +57,7 @@ const Register = () => {
           try {
             for (const key in data) {
               if (Array.isArray(data[key])) {
-                data[key].forEach((msg) => messages.push(`${msg}`));
+                data[key].forEach((msg) => messages.push(msg));
               } else if (typeof data[key] === "string") {
                 messages.push(data[key]);
               } else {
@@ -124,11 +123,13 @@ const Register = () => {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
+
         {error && (
-          <div style={{ color: 'red', marginTop: '10px', border: '1px solid red', padding: '8px' }}>
+          <div className="register-error">
             {error}
           </div>
         )}
+
         <button type="submit" disabled={isSubmitting} className="register-btn">
           Register
         </button>
