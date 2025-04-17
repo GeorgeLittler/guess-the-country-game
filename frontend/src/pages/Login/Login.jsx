@@ -25,10 +25,17 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
+    if (!username || !password) {
+      setError("Both username and password are required.");
+      return;
+    }
+
     if (isSubmitting) return;
   
     setIsSubmitting(true);
-    setError(""); // Clear any previous error messages
+
     try {
       const response = await axiosInstance.post(API_ENDPOINTS.LOGIN, {
         username,
@@ -64,7 +71,6 @@ const Login = () => {
           autoComplete="new-username"
           className="login-input"
           id="login-username"
-          required
           type="text"
           placeholder="Username"
           value={username}
@@ -74,7 +80,6 @@ const Login = () => {
           autoComplete="new-password"
           className="login-input"
           id="login-password"
-          required
           type="password"
           placeholder="Password"
           value={password}
